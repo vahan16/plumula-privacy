@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Plumula — Privacy Policy</title>
+  <meta name="robots" content="index, follow" />
+  <style>
+    :root { color-scheme: light dark; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+      color: #1c1c1e;
+      background: #ffffff;
+    }
+    @media (prefers-color-scheme: dark) {
+      body { color: #e6e6e6; background: #121212; }
+      a { color: #7fb069; }
+      code { background: #1e1e1e; }
+    }
+    h1 { font-size: 1.8rem; margin-bottom: 4px; }
+    h2 { font-size: 1.2rem; margin-top: 32px; }
+    .updated { color: #888; font-size: 0.9rem; margin-top: 0; }
+    a { color: #46613c; }
+    code { background: #f2f2f2; padding: 1px 5px; border-radius: 4px; font-size: 0.9em; }
+    ul { padding-left: 22px; }
+    .note { font-size: 0.9rem; color: #888; border-top: 1px solid #8884; margin-top: 40px; padding-top: 16px; }
+    .callout { border-left: 3px solid #46613c; padding: 2px 0 2px 14px; margin: 18px 0; }
+  </style>
+</head>
+<body>
+  <h1>Plumula — Privacy Policy</h1>
+  <p class="updated">Last updated: 13 July 2026</p>
+
+  <p>
+    This policy explains how the <strong>Plumula</strong> app (the “App”), published by
+    <strong>Vambran Studio</strong> (“we”, “us”), handles information. Plumula diagnoses houseplants:
+    you photograph a plant, the App reads the photo with an AI model, and it returns a diagnosis,
+    a care plan and a follow-up chat. By using the App you agree to this policy.
+  </p>
+
+  <h2>Summary</h2>
+  <ul>
+    <li>The App has <strong>no account or sign-in</strong>. Your plants, diagnoses, notes and chats are stored <strong>on your device</strong>.</li>
+    <li><strong>The photos you scan, and the questions you ask, are sent to our server and to an AI provider</strong> so a diagnosis or reply can be produced. This is the core of what the App does.</li>
+    <li>The App shows <strong>no ads</strong> and contains no advertising SDK.</li>
+    <li>We do <strong>not</strong> sell your personal information.</li>
+  </ul>
+
+  <div class="callout">
+    <strong>The one thing worth reading twice:</strong> a plant photo is a photo taken with your
+    camera. It may incidentally contain your home, your room, or people. Only scan what you're
+    comfortable sending. See “Photos and AI processing” below.
+  </div>
+
+  <h2>Information you provide</h2>
+  <ul>
+    <li>
+      <strong>Plant photos.</strong> Photos you capture in the App, or pick from your photo library
+      to scan.
+    </li>
+    <li>
+      <strong>Text you type or dictate.</strong> Follow-up questions in the plant chat, progress
+      check-ins (“how's it going?”), plant-name corrections, and notes.
+    </li>
+    <li>
+      <strong>Settings.</strong> Language, theme, watering units, reminder preferences.
+    </li>
+  </ul>
+  <p>
+    All of this is stored <strong>locally on your device</strong>, in the App's own database and
+    private file storage. We do not keep a copy of your plant library on our servers, and we have no
+    way to browse it. It is removed when you delete the plant in the App, or when you uninstall the
+    App.
+  </p>
+
+  <h2>Photos and AI processing</h2>
+  <p>
+    To diagnose a plant, the App sends the <strong>photo</strong> plus the measured facts around it
+    (a light reading, and optionally coarse local weather — see below) to
+    <strong>our proxy server</strong>, which runs on <strong>Cloudflare Workers</strong>. Our server
+    forwards the request to an <strong>AI provider</strong> to produce the diagnosis. Depending on
+    the request, the provider is one of:
+  </p>
+  <ul>
+    <li><strong>Anthropic</strong> (Claude) — <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">privacy policy</a></li>
+    <li><strong>Google</strong> (Gemini) — <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">privacy policy</a></li>
+    <li><strong>OpenAI</strong> (GPT) — <a href="https://openai.com/policies/privacy-policy/" target="_blank" rel="noopener">privacy policy</a></li>
+  </ul>
+  <p>
+    The same path is used for the follow-up <strong>chat</strong>, the “how's it going?”
+    <strong>progress</strong> updates, and <strong>translating</strong> a saved diagnosis into
+    another language — in those cases the text of your message (and, for a follow-up, the plant's
+    latest photo) is what gets sent.
+  </p>
+  <p>
+    <strong>We do not store your photos or messages on our server.</strong> They are relayed to the
+    AI provider to answer the request and are not written to any database of ours. The AI providers
+    process the request under their own policies, linked above; we use their standard API, and our
+    account is configured so that inputs are not used to train their models.
+  </p>
+
+  <h2>Information collected automatically</h2>
+  <ul>
+    <li>
+      <strong>Install identifier (usage limits).</strong> To enforce the free-trial and subscription
+      scan limits, the App sends a per-installation identifier with each scan — on Android the
+      Android ID, on iOS the vendor identifier (<code>identifierForVendor</code>). Our server stores
+      <strong>only</strong> that identifier, a period (e.g. the month), and a <strong>count of
+      scans</strong>. It is not linked to your name, email or device contacts, it carries none of
+      your plant data, and it is not used for advertising or tracking across apps.
+    </li>
+    <li>
+      <strong>Analytics.</strong> The App uses <strong>Google Firebase Analytics</strong> to
+      understand how the App is used (for example, which screens are opened) so we can improve it.
+      This collects app-usage events, general device and app information, and an app-instance
+      identifier. We use it in aggregate; it is not used to identify you personally. See
+      <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase's privacy information</a>
+      and <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.
+    </li>
+    <li>
+      <strong>Purchases.</strong> The optional <strong>Plumula+</strong> and <strong>Plumula Pro+</strong>
+      subscriptions are processed by <strong>Apple (App Store / StoreKit)</strong> or
+      <strong>Google Play Billing</strong>. Those platforms handle the transaction; we never receive
+      or store your payment card details.
+    </li>
+  </ul>
+  <p><strong>The App contains no advertising SDK and shows no ads.</strong> There is no advertising
+  identifier collection, and no ad personalization or tracking consent prompt, because there is
+  nothing to consent to.</p>
+
+  <h2>Device permissions</h2>
+  <ul>
+    <li><strong>Camera</strong> — to photograph your plant and measure the light it's getting. Required to scan.</li>
+    <li><strong>Photo library</strong> — to pick an existing photo to scan, and to save a plant photo back to your library when you tap Save.</li>
+    <li><strong>Location (approximate, optional)</strong> — used only to look up local weather so the diagnosis can account for it. We request coarse location, send the coordinates to <strong>Open-Meteo</strong> (<a href="https://open-meteo.com/en/terms" target="_blank" rel="noopener">terms &amp; privacy</a>) to fetch a forecast, and pass a short weather summary to the diagnosis. Decline it and everything else still works.</li>
+    <li><strong>Microphone &amp; speech recognition (optional)</strong> — to dictate a message in the plant chat instead of typing. Transcription is performed by the operating system (Apple's Speech framework on iOS, Google's speech service on Android) and is subject to that platform's policy.</li>
+    <li><strong>Notifications (optional)</strong> — to send watering reminders and to tell you a diagnosis is ready. Reminders are scheduled locally on your device.</li>
+  </ul>
+
+  <h2>How we use information</h2>
+  <p>
+    On-device data is used only to provide the App's features (your plant history, timelines,
+    reminders). Photos and messages are used to produce the diagnosis or reply you asked for. The
+    install identifier is used only to count scans against your plan. Analytics is used in aggregate
+    to improve the App. Store data is used by Apple/Google to process purchases.
+  </p>
+
+  <h2>Data sharing</h2>
+  <p>
+    We do not sell or rent your personal information. We do not share your plant library with anyone.
+    The only sharing is with the service providers named above — the AI provider that produces a
+    diagnosis, Cloudflare (which hosts our proxy), Open-Meteo (weather, if you allow location),
+    Google Firebase (analytics), and Apple/Google (purchases) — strictly to provide their part of the
+    App.
+  </p>
+
+  <h2>Data retention and deletion</h2>
+  <p>
+    Your plants, photos, diagnoses and chats live only on your device: delete a plant or a scan in
+    the App, or uninstall the App, to remove them. Photos and messages sent for a diagnosis are not
+    retained by us. The scan counter tied to your install identifier is retained so limits work
+    across a reinstall; to have it deleted, contact us at the address below and include the request —
+    note that deleting it resets your usage record, not your plant data (which we never had).
+  </p>
+
+  <h2>Children's privacy</h2>
+  <p>
+    Plumula is a general-audience plant-care app and is <strong>not directed to children under 13</strong>.
+    We do not knowingly collect personal information from children. If you believe a child has
+    provided personal information, contact us and we will address it.
+  </p>
+
+  <h2>Your rights</h2>
+  <p>
+    Depending on where you live (e.g. the EEA/UK under GDPR, or California under CCPA), you may have
+    rights to access, correct, or delete personal data and to object to certain processing. Because
+    the App stores your plant data only on your device, you can exercise most of these directly in
+    the App and in your device settings. For anything held on our side (the scan counter), or for any
+    other request, contact us below.
+  </p>
+
+  <h2>Security</h2>
+  <p>
+    Your plant data remains on your device, protected by your device's own security (lock screen, OS
+    sandboxing). All network requests use secure (HTTPS) connections, and our proxy is locked to the
+    App. No method of storage or transmission is 100% secure.
+  </p>
+
+  <h2>Changes to this policy</h2>
+  <p>
+    We may update this policy from time to time. Material changes will be posted here with a new
+    “Last updated” date. Continued use of the App after an update means you accept the revised policy.
+  </p>
+
+  <h2>Contact</h2>
+  <p>
+    Questions about this policy or your data? Contact us at
+    <strong><a href="mailto:vambranstudio@gmail.com">vambranstudio@gmail.com</a></strong>.
+  </p>
+
+  <p class="note">
+    This page is the official privacy policy for the Plumula app referenced in its Google Play and
+    App Store listings.
+  </p>
+</body>
+</html>
