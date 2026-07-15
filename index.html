@@ -33,7 +33,7 @@
 </head>
 <body>
   <h1>Plumula — Privacy Policy</h1>
-  <p class="updated">Last updated: 14 July 2026</p>
+  <p class="updated">Last updated: 15 July 2026</p>
 
   <p>
     This policy explains how the <strong>Plumula</strong> app (the “App”), published by
@@ -52,8 +52,9 @@
 
   <div class="callout">
     <strong>The one thing worth reading twice:</strong> a plant photo is a photo taken with your
-    camera. It may incidentally contain your home, your room, or people. Only scan what you're
-    comfortable sending. See “Photos and AI processing” below.
+    camera. It may incidentally contain your home, your room, people, or (for a photo you pick from
+    your library) embedded location data. Only scan what you're comfortable sending. See “Photos and
+    AI processing” below.
   </div>
 
   <h2>Information you provide</h2>
@@ -71,10 +72,10 @@
     </li>
   </ul>
   <p>
-    All of this is stored <strong>locally on your device</strong>, in the App's own database and
-    private file storage. We do not keep a copy of your plant library on our servers, and we have no
-    way to browse it. It is removed when you delete the plant in the App, or when you uninstall the
-    App.
+    Except for reported content (see “When you report an AI response” below), all of this is stored
+    <strong>locally on your device</strong>, in the App's own database and private file storage. We
+    do not keep a copy of your plant library on our servers, and we have no way to browse it. It is
+    removed when you delete the plant in the App, or when you uninstall the App.
   </p>
 
   <h2>Photos and AI processing</h2>
@@ -86,9 +87,8 @@
     the request, the provider is one of:
   </p>
   <ul>
-    <li><strong>Anthropic</strong> (Claude) — <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">privacy policy</a></li>
-    <li><strong>Google</strong> (Gemini) — <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">privacy policy</a></li>
-    <li><strong>OpenAI</strong> (GPT) — <a href="https://openai.com/policies/privacy-policy/" target="_blank" rel="noopener">privacy policy</a></li>
+    <li><strong>Google</strong> (Gemini API) — <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">privacy policy</a></li>
+    <li><strong>Groq</strong> (fast inference of open AI models) — <a href="https://groq.com/privacy-policy/" target="_blank" rel="noopener">privacy policy</a></li>
   </ul>
   <p>
     The same path is used for the follow-up <strong>chat</strong>, the “how's it going?”
@@ -98,9 +98,13 @@
   </p>
   <p>
     <strong>We do not store your photos or messages on our server.</strong> They are relayed to the
-    AI provider to answer the request and are not written to any database of ours. The AI providers
-    process the request under their own policies, linked above; we use their standard API, and our
-    account is configured so that inputs are not used to train their models.
+    AI provider to produce your result and are not written to any database of ours. Each provider
+    then handles the request under its own policy, linked above. Two things to know here: Plumula
+    currently uses <strong>Google's Gemini API on its free tier</strong>, and under Google's terms
+    content sent on that tier <strong>may be used by Google to improve its services and may be
+    reviewed by human reviewers</strong>; <strong>Groq</strong> uses a request only to generate the
+    reply. Because of this, only scan and send what you're comfortable sharing — see the note at the
+    top of this page.
   </p>
 
   <h2>Information collected automatically</h2>
@@ -122,22 +126,45 @@
       and <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.
     </li>
     <li>
+      <strong>Crash and diagnostic reports.</strong> The App uses <strong>Google Firebase
+      Crashlytics</strong> to record crashes and errors so we can fix them. A report includes the
+      error and its stack trace, the state of the device at the time (device model, OS version,
+      memory, and app version) and a Crashlytics installation identifier. It contains none of your
+      plant photos or chat content. See
+      <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase's privacy information</a>.
+    </li>
+    <li>
+      <strong>Reported content (only if you use it).</strong> If you report an AI response as
+      inappropriate, the App sends us the reported text, your optional note, and your install
+      identifier so we can review it and improve safety. Unlike your plant data, these reports are
+      stored on our server. See “When you report an AI response” below.
+    </li>
+    <li>
       <strong>Purchases.</strong> The optional <strong>Plumula+</strong> and <strong>Plumula Pro+</strong>
       subscriptions are processed by <strong>Apple (App Store / StoreKit)</strong> or
       <strong>Google Play Billing</strong>. Those platforms handle the transaction; we never receive
-      or store your payment card details.
+      or store your payment card details. The App knows your current subscription level so it can
+      unlock the right features and count scans.
     </li>
   </ul>
-  <p><strong>The App contains no advertising SDK and shows no ads.</strong> There is no advertising
-  identifier collection, and no ad personalization or tracking consent prompt, because there is
-  nothing to consent to.</p>
+  <p><strong>The App contains no advertising SDK and shows no ads.</strong> We do not use your data
+  for advertising, ad personalization, or to track you across other apps or services.</p>
+
+  <h2>When you report an AI response</h2>
+  <p>
+    Generative-AI results can occasionally be wrong or inappropriate. The App lets you report an AI
+    diagnosis or chat reply from within the App. When you do, we receive the flagged text, any note
+    you add, and your install identifier (so repeated reports can be correlated), and we store them
+    so we can review the output and improve safety. You can have these deleted at any time — see
+    “Data retention and deletion”.
+  </p>
 
   <h2>Device permissions</h2>
   <ul>
     <li><strong>Camera</strong> — to photograph your plant and measure the light it's getting. Required to scan.</li>
     <li><strong>Photo library</strong> — to pick an existing photo to scan, and to save a plant photo back to your library when you tap Save.</li>
-    <li><strong>Location (approximate, optional)</strong> — used only to look up local weather so the diagnosis can account for it. We request coarse location, send the coordinates to <strong>Open-Meteo</strong> (<a href="https://open-meteo.com/en/terms" target="_blank" rel="noopener">terms &amp; privacy</a>) to fetch a forecast, and pass a short weather summary to the diagnosis. Decline it and everything else still works.</li>
-    <li><strong>Microphone &amp; speech recognition (optional)</strong> — to dictate a message in the plant chat instead of typing. Transcription is performed by the operating system (Apple's Speech framework on iOS, Google's speech service on Android) and is subject to that platform's policy.</li>
+    <li><strong>Location (approximate, optional)</strong> — used only to look up local weather so the diagnosis can account for it. We request coarse location and send the coordinates to <strong>Open-Meteo</strong> (<a href="https://open-meteo.com/en/terms" target="_blank" rel="noopener">terms &amp; privacy</a>) to fetch a forecast, then pass a short weather summary to the diagnosis. If a photo you pick already has location saved in it (EXIF), that location may be used for the same weather lookup. Decline location and everything else still works.</li>
+    <li><strong>Microphone &amp; speech recognition (optional)</strong> — to dictate a message in the plant chat instead of typing. Transcription is performed by the operating system (Apple's Speech framework on iOS, Google's speech service on Android) and is subject to that platform's policy. We do not keep the audio.</li>
     <li><strong>Notifications (optional)</strong> — to send watering reminders and to tell you a diagnosis is ready. Reminders are scheduled locally on your device.</li>
   </ul>
 
@@ -145,38 +172,34 @@
   <p>
     On-device data is used only to provide the App's features (your plant history, timelines,
     reminders). Photos and messages are used to produce the diagnosis or reply you asked for. The
-    install identifier is used only to count scans against your plan. Analytics is used in aggregate
-    to improve the App. Store data is used by Apple/Google to process purchases.
+    install identifier is used only to count scans against your plan and to prevent abuse. Analytics
+    and crash reports are used in aggregate to understand usage and fix problems. Store data is used
+    by Apple/Google to process purchases.
   </p>
 
   <h2>Data sharing</h2>
   <p>
     We do not sell or rent your personal information. We do not share your plant library with anyone.
-    The only sharing is with the service providers named above — the AI provider that produces a
-    diagnosis, Cloudflare (which hosts our proxy), Open-Meteo (weather, if you allow location),
-    Google Firebase (analytics), and Apple/Google (purchases) — strictly to provide their part of the
-    App.
+    The only sharing is with the service providers named above — the AI providers that produce a
+    diagnosis (<strong>Google Gemini</strong> and <strong>Groq</strong>), Cloudflare (which hosts our
+    proxy), Open-Meteo (weather, if you allow location), Google Firebase (analytics and crash
+    reporting), and Apple/Google (purchases) — strictly to provide their part of the App.
   </p>
 
-  <h2 id="data-deletion">Data retention and deletion</h2>
-  <p>You can delete your data at any time — there is no account to close.</p>
-  <p><strong>How to delete your data:</strong></p>
-  <ul>
-    <li><strong>In the App:</strong> open <strong>Settings</strong> and tap <strong>“Delete my data”</strong>, then confirm. This permanently removes your data on the device <em>and</em> signals our server to erase what it holds for your installation.</li>
-    <li><strong>By uninstalling</strong> the App, which removes all Plumula data stored on your device.</li>
-    <li><strong>By email:</strong> write to <a href="mailto:vambranstudio@gmail.com">vambranstudio@gmail.com</a> and we will delete your data within 30 days.</li>
-  </ul>
-  <p><strong>What is deleted:</strong></p>
-  <ul>
-    <li><strong>On your device</strong> — every plant, photo, diagnosis, chat, note and watering schedule.</li>
-    <li><strong>On our server</strong> — any content you reported for review, and any device-attestation key tied to your installation, are permanently deleted.</li>
-  </ul>
-  <p><strong>What is kept, and why:</strong> after deletion, your scan count is retained only as a
-    <strong>one-way, irreversible hash</strong> of the install identifier — it cannot be linked back to
-    you or your device and holds no personal data. It is kept in this anonymized form only to enforce
-    free-usage limits and prevent abuse (a legitimate interest under GDPR Art. 17). Photos and messages
-    sent for a diagnosis are never stored on our server (see “Photos and AI processing” above). Your app
-    settings and any subscription (managed by the App Store / Google Play) are separate and unaffected.</p>
+  <h2>Data retention and deletion</h2>
+  <p>
+    Your plants, photos, diagnoses and chats live only on your device: delete a plant or a scan in
+    the App, or uninstall the App, to remove them. Photos and messages sent for a diagnosis are not
+    retained by us. The scan counter tied to your install identifier is retained so limits still work
+    if you reinstall.
+  </p>
+  <p>
+    You can erase what we hold at any time from <strong>Settings → Delete my data</strong> in the App.
+    This resets the analytics identifier and asks our server to remove the data tied to your install:
+    any reported content is deleted, and the scan counter is replaced with an anonymous, one-way
+    hashed record so it cannot simply be reset by reinstalling. You can also contact us at the address
+    below to make the same request.
+  </p>
 
   <h2>Children's privacy</h2>
   <p>
@@ -190,15 +213,16 @@
     Depending on where you live (e.g. the EEA/UK under GDPR, or California under CCPA), you may have
     rights to access, correct, or delete personal data and to object to certain processing. Because
     the App stores your plant data only on your device, you can exercise most of these directly in
-    the App and in your device settings. For anything held on our side (the scan counter), or for any
-    other request, contact us below.
+    the App and in your device settings. For anything held on our side (the scan counter, and any
+    reported content), use <strong>Settings → Delete my data</strong> or contact us below.
   </p>
 
   <h2>Security</h2>
   <p>
     Your plant data remains on your device, protected by your device's own security (lock screen, OS
     sandboxing). All network requests use secure (HTTPS) connections, and our proxy is locked to the
-    App. No method of storage or transmission is 100% secure.
+    App. Cloudflare processes your device's IP address transiently to route requests and rate-limit
+    abuse; we do not store it. No method of storage or transmission is 100% secure.
   </p>
 
   <h2>Changes to this policy</h2>
