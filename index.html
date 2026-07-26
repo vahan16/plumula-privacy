@@ -33,7 +33,7 @@
 </head>
 <body>
   <h1>Plumula — Privacy Policy</h1>
-  <p class="updated">Last updated: 15 July 2026</p>
+  <p class="updated">Last updated: 26 July 2026</p>
 
   <p>
     This policy explains how the <strong>Plumula</strong> app (the “App”), published by
@@ -44,7 +44,7 @@
 
   <h2>Summary</h2>
   <ul>
-    <li>The App has <strong>no account or sign-in</strong>. Your plants, diagnoses, notes and chats are stored <strong>on your device</strong>.</li>
+    <li>The App has <strong>no account or sign-in</strong>. Your plants, diagnoses, notes and chats are stored <strong>on your device</strong> — and, <strong>only if you turn on Cloud Backup</strong>, also backed up to our server so you can restore them. See “Cloud backup &amp; sync” below.</li>
     <li><strong>The photos you scan, and the questions you ask, are sent to our server and to an AI provider</strong> so a diagnosis or reply can be produced. This is the core of what the App does.</li>
     <li>The App shows <strong>no ads</strong> and contains no advertising SDK.</li>
     <li>We do <strong>not</strong> sell your personal information.</li>
@@ -73,9 +73,10 @@
   </ul>
   <p>
     Except for reported content (see “When you report an AI response” below), all of this is stored
-    <strong>locally on your device</strong>, in the App's own database and private file storage. We
-    do not keep a copy of your plant library on our servers, and we have no way to browse it. It is
-    removed when you delete the plant in the App, or when you uninstall the App.
+    <strong>locally on your device</strong>, in the App's own database and private file storage.
+    Unless you turn on <strong>Cloud Backup</strong> (see below), we keep no copy of your plant library
+    on our servers and have no way to browse it. It is removed when you delete the plant in the App, or
+    when you uninstall the App.
   </p>
 
   <h2>Photos and AI processing</h2>
@@ -83,28 +84,78 @@
     To diagnose a plant, the App sends the <strong>photo</strong> plus the measured facts around it
     (a light reading, and optionally coarse local weather — see below) to
     <strong>our proxy server</strong>, which runs on <strong>Cloudflare Workers</strong>. Our server
-    forwards the request to an <strong>AI provider</strong> to produce the diagnosis. Depending on
-    the request, the provider is one of:
+    forwards the request to an <strong>AI provider</strong> to produce the result. The providers we
+    use are:
   </p>
   <ul>
-    <li><strong>Google</strong> (Gemini API) — <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">privacy policy</a></li>
-    <li><strong>Groq</strong> (fast inference of open AI models) — <a href="https://groq.com/privacy-policy/" target="_blank" rel="noopener">privacy policy</a></li>
+    <li><strong>Google</strong> (Gemini API) — diagnoses and chat — <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">privacy policy</a></li>
+    <li><strong>Mistral AI</strong> (Mistral models; France/EU) — diagnoses and chat — <a href="https://mistral.ai/terms/#privacy-policy" target="_blank" rel="noopener">privacy policy</a></li>
+    <li><strong>Groq</strong> (fast inference of open AI models) — <strong>chat text only</strong> — <a href="https://groq.com/privacy-policy/" target="_blank" rel="noopener">privacy policy</a></li>
   </ul>
   <p>
-    The same path is used for the follow-up <strong>chat</strong>, the “how's it going?”
-    <strong>progress</strong> updates, and <strong>translating</strong> a saved diagnosis into
-    another language — in those cases the text of your message (and, for a follow-up, the plant's
-    latest photo) is what gets sent.
+    Your <strong>photos</strong> are sent only to <strong>Google</strong> or <strong>Mistral AI</strong>
+    — Groq's models are text-only, so a photo is never sent to Groq. The follow-up <strong>chat</strong>,
+    the “how's it going?” <strong>progress</strong> updates, and <strong>translating</strong> a saved
+    diagnosis into another language use the same path — there the text of your message (and, for a
+    follow-up, the plant's latest photo, which again goes only to Google or Mistral) is what gets sent.
   </p>
   <p>
-    <strong>We do not store your photos or messages on our server.</strong> They are relayed to the
-    AI provider to produce your result and are not written to any database of ours. Each provider
-    then handles the request under its own policy, linked above. Two things to know here: Plumula
-    currently uses <strong>Google's Gemini API on its free tier</strong>, and under Google's terms
-    content sent on that tier <strong>may be used by Google to improve its services and may be
-    reviewed by human reviewers</strong>; <strong>Groq</strong> uses a request only to generate the
-    reply. Because of this, only scan and send what you're comfortable sharing — see the note at the
-    top of this page.
+    <strong>Outside of Cloud Backup, we do not store your photos or messages on our server.</strong>
+    When you ask for a diagnosis or reply, they are relayed to the AI provider to produce your result
+    and are not written to any database of ours; only if you turn on <strong>Cloud Backup</strong>
+    (described next) is a copy kept on our server, and only of what you back up. Each provider then
+    handles the request under its own policy, linked above. Two things to know here: Plumula
+    currently uses <strong>Google's Gemini API and Mistral AI on their free tiers</strong>, and under
+    those providers' terms, content sent on a free tier <strong>may be used to improve their
+    services</strong> (Google's may additionally be <strong>reviewed by human reviewers</strong>);
+    <strong>Groq</strong> uses a request only to generate the reply. Because of this, only scan and
+    send what you're comfortable sharing — see the note at the top of this page.
+  </p>
+
+  <h2>AI advice — accuracy and limits</h2>
+  <p>
+    Everything the App tells you about a plant — the identification, the diagnosis, the care plan, the
+    chat replies — is <strong>generated by AI and can be wrong</strong>, including the species. It is a
+    helpful second opinion, <strong>not professional horticultural, veterinary, or medical advice</strong>,
+    and Plumula is not a substitute for a qualified horticulturist, an agricultural extension service, or
+    a vet or doctor.
+  </p>
+  <p>
+    Please don't act on a result you aren't confident in — particularly for anything you cannot undo,
+    such as pruning, repotting, or applying a fertiliser, pesticide, or other treatment.
+    <strong>Never eat, brew, or medicinally use a plant, and never judge whether a plant is safe for a
+    child or a pet, on the basis of this App.</strong> Plant identification from a single photo is
+    genuinely unreliable, and some plants are toxic or have dangerous lookalikes. If it matters, confirm
+    with a local nursery, an extension service, or a qualified professional first.
+  </p>
+  <p>
+    You use the App's suggestions at your own risk, and we are not liable for any loss or damage to
+    plants, people, or animals resulting from acting on them. If the App produces content that is
+    offensive or unsafe, please report it with the flag button on the response, or email us.
+  </p>
+
+  <h2>Cloud backup &amp; sync (optional)</h2>
+  <p>
+    The App can back up your plants to the cloud so you can restore them on a new device, recover after a
+    reinstall, or keep several devices in sync. <strong>This is off unless you turn it on</strong> in
+    <strong>Settings → Sync &amp; Backup</strong>. There is still <strong>no account or login</strong>:
+    when you enable it, the App creates a random, anonymous <strong>backup ID</strong> (a long code, also
+    shown to you as a “recovery code”), and everything you back up is stored under that ID.
+  </p>
+  <p>When Cloud Backup is on, we store on <strong>our own Cloudflare servers</strong>:</p>
+  <ul>
+    <li>your <strong>plant data</strong> — diagnoses, verdicts, care history, progress check-ins, watering
+      records, notes and chats — as text records in a database (Cloudflare D1);</li>
+    <li>your <strong>plant photos</strong>, uploaded as <strong>compressed (downscaled)</strong> images to
+      object storage (Cloudflare R2) — not the full-resolution originals.</li>
+  </ul>
+  <p>
+    This is kept solely to provide backup, restore and sync, tied to your anonymous backup ID — not to
+    your name, email, or the AI providers above, and never used for ads or profiling. Anyone who has your
+    recovery code can restore that data, so keep it private. Cloudflare stores it on our behalf
+    (<a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare privacy policy</a>).
+    You can turn Cloud Backup off at any time, and <strong>Settings → Delete my data</strong> erases the
+    cloud copy too — every backed-up record <em>and</em> photo (see “Data retention and deletion”).
   </p>
 
   <h2>Information collected automatically</h2>
@@ -181,24 +232,29 @@
   <p>
     We do not sell or rent your personal information. We do not share your plant library with anyone.
     The only sharing is with the service providers named above — the AI providers that produce a
-    diagnosis (<strong>Google Gemini</strong> and <strong>Groq</strong>), Cloudflare (which hosts our
-    proxy), Open-Meteo (weather, if you allow location), Google Firebase (analytics and crash
-    reporting), and Apple/Google (purchases) — strictly to provide their part of the App.
+    diagnosis or chat reply (<strong>Google Gemini</strong>, <strong>Mistral AI</strong>, and
+    <strong>Groq</strong>), Cloudflare (which hosts our proxy and, if you enable Cloud Backup, stores
+    your backed-up plant data + compressed photos), Open-Meteo (weather, if you allow location), Google
+    Firebase (analytics and crash reporting), and Apple/Google (purchases) — strictly to provide their
+    part of the App.
   </p>
 
   <h2>Data retention and deletion</h2>
   <p>
-    Your plants, photos, diagnoses and chats live only on your device: delete a plant or a scan in
-    the App, or uninstall the App, to remove them. Photos and messages sent for a diagnosis are not
+    Your plants, photos, diagnoses and chats live on your device: delete a plant or a scan in the App,
+    or uninstall the App, to remove them locally. Photos and messages sent for a diagnosis are not
     retained by us. The scan counter tied to your install identifier is retained so limits still work
-    if you reinstall.
+    if you reinstall. <strong>If you turned on Cloud Backup</strong>, a copy of your plant data and
+    compressed photos is also kept on our servers under your anonymous backup ID until you erase it
+    (below); uninstalling the App does <em>not</em> remove the cloud copy.
   </p>
   <p>
     You can erase what we hold at any time from <strong>Settings → Delete my data</strong> in the App.
     This resets the analytics identifier and asks our server to remove the data tied to your install:
-    any reported content is deleted, and the scan counter is replaced with an anonymous, one-way
-    hashed record so it cannot simply be reset by reinstalling. You can also contact us at the address
-    below to make the same request.
+    any reported content is deleted, the scan counter is replaced with an anonymous, one-way hashed
+    record so it cannot simply be reset by reinstalling, and — if you used Cloud Backup — every
+    backed-up record and photo is erased from our servers. You can also contact us at the address below
+    to make the same request.
   </p>
 
   <h2>Children's privacy</h2>
