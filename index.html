@@ -33,7 +33,7 @@
 </head>
 <body>
   <h1>Plumula — Privacy Policy</h1>
-  <p class="updated">Last updated: 27 July 2026</p>
+  <p class="updated">Last updated: 6 September 2026</p>
 
   <p>
     This policy explains how the <strong>Plumula</strong> app (the “App”), published by
@@ -82,7 +82,7 @@
   <h2>Photos and AI processing</h2>
   <p>
     To diagnose a plant, the App sends the <strong>photo</strong> plus the measured facts around it
-    (a light reading, and optionally coarse local weather — see below) to
+    (a light reading, and local weather where available) to
     <strong>our proxy server</strong>, which runs on <strong>Cloudflare Workers</strong>. Our server
     forwards the request to an <strong>AI provider</strong> to produce the result. The providers we
     use are:
@@ -92,6 +92,14 @@
     <li><strong>Mistral AI</strong> (Mistral models; France/EU) — diagnoses and chat — <a href="https://mistral.ai/terms/#privacy-policy" target="_blank" rel="noopener">privacy policy</a></li>
     <li><strong>Groq</strong> (fast inference of open AI models) — <strong>chat text only</strong> — <a href="https://groq.com/privacy-policy/" target="_blank" rel="noopener">privacy policy</a></li>
   </ul>
+  <p>
+    The App does <strong>not</strong> ask for location access and cannot read your device's location.
+    Local weather comes from your device's <strong>time zone</strong> — a settings value, not a sensor:
+    the App looks that zone's approximate coordinates up in a table bundled inside it and asks
+    <strong>Open-Meteo</strong> (<a href="https://open-meteo.com/en/terms" target="_blank" rel="noopener">terms &amp; privacy</a>)
+    for the forecast. The coordinates describe a city-sized area rather than you, carry no identifier,
+    and are not stored by us.
+  </p>
   <p>
     Your <strong>photos</strong> are sent only to <strong>Google</strong> or <strong>Mistral AI</strong>
     — Groq's models are text-only, so a photo is never sent to Groq. The follow-up <strong>chat</strong>,
@@ -215,7 +223,6 @@
   <ul>
     <li><strong>Camera</strong> — to photograph your plant and measure the light it's getting. Required to scan.</li>
     <li><strong>Photo library</strong> — to pick an existing photo to scan, and to save a plant photo back to your library when you tap Save.</li>
-    <li><strong>Location (approximate, optional)</strong> — used only to look up local weather so the diagnosis can account for it. We request coarse location and send the coordinates to <strong>Open-Meteo</strong> (<a href="https://open-meteo.com/en/terms" target="_blank" rel="noopener">terms &amp; privacy</a>) to fetch a forecast, then pass a short weather summary to the diagnosis. If a photo you pick already has location saved in it (EXIF), that location may be used for the same weather lookup. Decline location and everything else still works.</li>
     <li><strong>Microphone &amp; speech recognition (optional)</strong> — to dictate a message in the plant chat instead of typing. Transcription is performed by the operating system (Apple's Speech framework on iOS, Google's speech service on Android) and is subject to that platform's policy. We do not keep the audio.</li>
     <li><strong>Notifications (optional)</strong> — to send watering reminders and to tell you a diagnosis is ready. Reminders are scheduled locally on your device.</li>
   </ul>
@@ -235,7 +242,7 @@
     The only sharing is with the service providers named above — the AI providers that produce a
     diagnosis or chat reply (<strong>Google Gemini</strong>, <strong>Mistral AI</strong>, and
     <strong>Groq</strong>), Cloudflare (which hosts our proxy and, if you enable Cloud Backup, stores
-    your backed-up plant data + compressed photos), Open-Meteo (weather, if you allow location), Google
+    your backed-up plant data + compressed photos), Open-Meteo (weather for your device's time zone), Google
     Firebase (analytics and crash reporting), and Apple/Google (purchases) — strictly to provide their
     part of the App.
   </p>
