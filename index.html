@@ -33,7 +33,7 @@
 </head>
 <body>
   <h1>Plumula — Privacy Policy</h1>
-  <p class="updated">Last updated: 6 September 2026</p>
+  <p class="updated">Last updated: 10 October 2026</p>
 
   <p>
     This policy explains how the <strong>Plumula</strong> app (the “App”), published by
@@ -172,26 +172,30 @@
     <li>
       <strong>Install identifier (usage limits).</strong> To enforce the free-trial and subscription
       scan limits, the App sends a per-installation identifier with each scan — on Android the
-      Android ID, on iOS the vendor identifier (<code>identifierForVendor</code>). Our server stores
+      Android ID, on iOS a random identifier the App keeps in the device's Keychain (first taken from
+      the vendor identifier, <code>identifierForVendor</code>), so it stays the same if the App is
+      deleted and installed again. Our server stores
       <strong>only</strong> that identifier, a period (e.g. the month), and a <strong>count of
       scans</strong>. It is not linked to your name, email or device contacts, it carries none of
       your plant data, and it is not used for advertising or tracking across apps.
     </li>
     <li>
-      <strong>Analytics.</strong> The App uses <strong>Google Firebase Analytics</strong> to
-      understand how the App is used (for example, which screens are opened) so we can improve it.
-      This collects app-usage events, general device and app information, and an app-instance
-      identifier. We use it in aggregate; it is not used to identify you personally. See
-      <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase's privacy information</a>
-      and <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.
+      <strong>Analytics.</strong> The App sends app-usage events (for example, which screens are
+      opened) to our server, which passes them on to <strong>Google Analytics</strong> so we can
+      understand how the App is used and improve it. They carry a random analytics identifier the App
+      creates, your subscription level and the language the App's AI writes in, general device
+      information (phone or tablet, operating system and its version, device model), and an
+      approximate location (country, region and city) our server derives from the connection. Your
+      IP address, plant photos and chat content are not passed on. We use it in aggregate; it is not
+      used to identify you personally or for advertising. See
+      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.
     </li>
     <li>
-      <strong>Crash and diagnostic reports.</strong> The App uses <strong>Google Firebase
-      Crashlytics</strong> to record crashes and errors so we can fix them. A report includes the
-      error and its stack trace, the state of the device at the time (device model, OS version,
-      memory, and app version) and a Crashlytics installation identifier. It contains none of your
-      plant photos or chat content. See
-      <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase's privacy information</a>.
+      <strong>Crash and error reports.</strong> When the App runs into an error in its own code, it
+      sends our server the error and where in the App's code it happened (its stack trace), the
+      App's version, and the operating system and its version, so we can fix it. Our server keeps one
+      record per kind of error and how many times it happened. A report carries no identifier of you
+      or your device, and none of your plant photos or chat content.
     </li>
     <li>
       <strong>Reported content (only if you use it).</strong> If you report an AI response as
@@ -200,7 +204,7 @@
       stored on our server. See “When you report an AI response” below.
     </li>
     <li>
-      <strong>Purchases.</strong> The optional <strong>Plumula+</strong> and <strong>Plumula Pro+</strong>
+      <strong>Purchases.</strong> The optional <strong>Plus</strong> and <strong>Canopy</strong>
       subscriptions are processed by <strong>Apple (App Store / StoreKit)</strong> or
       <strong>Google Play Billing</strong>. Those platforms handle the transaction; we never receive
       or store your payment card details. The App knows your current subscription level so it can
@@ -243,7 +247,7 @@
     diagnosis or chat reply (<strong>Google Gemini</strong>, <strong>Mistral AI</strong>, and
     <strong>Groq</strong>), Cloudflare (which hosts our proxy and, if you enable Cloud Backup, stores
     your backed-up plant data + compressed photos), Open-Meteo (weather for your device's time zone), Google
-    Firebase (analytics and crash reporting), and Apple/Google (purchases) — strictly to provide their
+    Analytics (usage analytics, through our server), and Apple/Google (purchases) — strictly to provide their
     part of the App.
   </p>
 
