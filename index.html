@@ -33,7 +33,7 @@
 </head>
 <body>
   <h1>Plumula — Privacy Policy</h1>
-  <p class="updated">Last updated: 12 October 2026</p>
+  <p class="updated">Last updated: 13 October 2026</p>
 
   <p>
     This policy explains how the <strong>Plumula</strong> app (the “App”), published by
@@ -46,7 +46,7 @@
   <ul>
     <li>The App has <strong>no account or sign-in</strong>. Your plants, diagnoses, notes and chats are stored <strong>on your device</strong> — and, <strong>only if you turn on Cloud Backup</strong>, also backed up to our server so you can restore them. See “Cloud backup &amp; sync” below.</li>
     <li><strong>The photos you scan, and the questions you ask, are sent to our server and to an AI provider</strong> so a diagnosis or reply can be produced. This is the core of what the App does.</li>
-    <li><strong>Location is optional.</strong> From version 1.2 the App can ask for it when you photograph a plant, to put that plant on your own map. A plant growing outdoors can also appear on <strong>everyone's map</strong>, without your photo or your name. See “Location and the map” below.</li>
+    <li><strong>Location is optional.</strong> From version 1.2 the App can ask for it when you photograph a plant, to put that plant on your own map. A plant growing outdoors can also appear on <strong>everyone's map</strong> if you choose Everyone for it: then its photo shows there too, never your name. See “Location and the map” below.</li>
     <li>The App shows <strong>no ads</strong> and contains no advertising SDK.</li>
     <li>We do <strong>not</strong> sell your personal information.</li>
   </ul>
@@ -109,10 +109,12 @@
     follow-up, the plant's latest photo, which again goes only to Google or Mistral) is what gets sent.
   </p>
   <p>
-    <strong>Outside of Cloud Backup, we do not store your photos or messages on our server.</strong>
+    <strong>Outside of Cloud Backup and everyone's map, we do not store your photos or messages on our server.</strong>
     When you ask for a diagnosis or reply, they are relayed to the AI provider to produce your result
     and are not written to any database of ours; only if you turn on <strong>Cloud Backup</strong>
-    (described next) is a copy kept on our server, and only of what you back up. Each provider then
+    (described next) is a copy kept on our server, and only of what you back up; and only a plant you
+    put on <strong>Everyone</strong> has its photo kept there, to show on everyone's map (see “Location
+    and the map”). Each provider then
     handles the request under its own policy, linked above. Two things to know here: Plumula
     currently uses <strong>Google's Gemini API and Mistral AI on their free tiers</strong>, and under
     those providers' terms, content sent on a free tier <strong>may be used to improve their
@@ -144,10 +146,13 @@
       other plant stays on your map only. On each plant's page you choose who sees it — Everyone, Only me,
       or Hidden — and can change it at any time. A plant on everyone's map shows its species, its kind
       (tree, plant or fungus) and its state, at its square of about 1 km and, zoomed in, at the spot where
-      you photographed it. It shows <strong>without your photo and without your name</strong>.
+      you photographed it, <strong>with its photo</strong> (a smaller copy of the plant's own photo), and
+      <strong>never with your name</strong>. Before the photo is shown, an AI model (Google Gemini) checks
+      it: a photo that shows something not for everyone, or a face someone could recognize, stays off the
+      map, and the plant shows its kind drawn instead.
       <strong>Threatened or protected species never appear</strong> on everyone's map. Our server
-      (Cloudflare) keeps a public plant's place, species and an anonymous identifier until you take it
-      off the map or delete your data.</li>
+      (Cloudflare) keeps a public plant's place, species, photo and an anonymous identifier until you take
+      it off the map or delete your data; taking it off the map deletes its photo there.</li>
     <li><strong>Names and talk.</strong> On a plant someone shared, anyone using the App can agree with
       its name, suggest another, or write in its talk. What you post there is <strong>public</strong>, shown
       with the name you gave the App when you started it, and never with your install identifier. A
