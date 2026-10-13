@@ -33,7 +33,7 @@
 </head>
 <body>
   <h1>Plumula — Privacy Policy</h1>
-  <p class="updated">Last updated: 10 October 2026</p>
+  <p class="updated">Last updated: 12 October 2026</p>
 
   <p>
     This policy explains how the <strong>Plumula</strong> app (the “App”), published by
@@ -46,6 +46,7 @@
   <ul>
     <li>The App has <strong>no account or sign-in</strong>. Your plants, diagnoses, notes and chats are stored <strong>on your device</strong> — and, <strong>only if you turn on Cloud Backup</strong>, also backed up to our server so you can restore them. See “Cloud backup &amp; sync” below.</li>
     <li><strong>The photos you scan, and the questions you ask, are sent to our server and to an AI provider</strong> so a diagnosis or reply can be produced. This is the core of what the App does.</li>
+    <li><strong>Location is optional.</strong> From version 1.2 the App can ask for it when you photograph a plant, to put that plant on your own map. A plant growing outdoors can also appear on <strong>everyone's map</strong>, without your photo or your name. See “Location and the map” below.</li>
     <li>The App shows <strong>no ads</strong> and contains no advertising SDK.</li>
     <li>We do <strong>not</strong> sell your personal information.</li>
   </ul>
@@ -93,8 +94,8 @@
     <li><strong>Groq</strong> (fast inference of open AI models) — <strong>chat text only</strong> — <a href="https://groq.com/privacy-policy/" target="_blank" rel="noopener">privacy policy</a></li>
   </ul>
   <p>
-    The App does <strong>not</strong> ask for location access and cannot read your device's location.
-    Local weather comes from your device's <strong>time zone</strong> — a settings value, not a sensor:
+    Local weather does <strong>not</strong> use your device's location, even when you allow the map to
+    (see “Location and the map”). It comes from your device's <strong>time zone</strong> — a settings value, not a sensor:
     the App looks that zone's approximate coordinates up in a table bundled inside it and asks
     <strong>Open-Meteo</strong> (<a href="https://open-meteo.com/en/terms" target="_blank" rel="noopener">terms &amp; privacy</a>)
     for the forecast. The coordinates describe a city-sized area rather than you, carry no identifier,
@@ -119,6 +120,48 @@
     <strong>Groq</strong> uses a request only to generate the reply. Because of this, only scan and
     send what you're comfortable sharing — see the note at the top of this page.
   </p>
+
+  <h2>Location and the map (from version 1.2)</h2>
+  <p>
+    <strong>When you allow it</strong>, the App reads your device's location while its camera is open and
+    saves it with the plant you photograph, so the plant can stand on <strong>your map</strong> where you
+    found it. For a photo you pick from your library, the location embedded in the photo (if it has one)
+    is used instead. Location is asked “while using the App” only: it is never read in the background, and the
+    App works the same without it (a plant then has no place until you put one on the map by hand). You
+    can move a plant's pin, remove its place, or turn location off in your device's settings at any time.
+    A plant's place is stored on your device and, if you turned on Cloud Backup, in your backup.
+  </p>
+  <ul>
+    <li><strong>The map itself.</strong> The map is drawn by <strong>Apple Maps</strong> on iPhone and
+      iPad and by <strong>OpenFreeMap</strong> (OpenStreetMap data) on Android. Like any map, these services
+      receive the area your screen shows and your device's network address in order to send the map; they
+      do not receive your plants. (<a href="https://www.apple.com/legal/privacy/data/en/apple-maps/" target="_blank" rel="noopener">Apple Maps &amp; privacy</a>,
+      <a href="https://openfreemap.org" target="_blank" rel="noopener">OpenFreeMap</a>.)</li>
+    <li><strong>Searching for a place.</strong> The words you type into the map's search go through our
+      server to <strong>Google's Geocoding API</strong>, which returns matching places.</li>
+    <li><strong>Everyone's map.</strong> Only plants growing <strong>outdoors</strong> (in a garden or in
+      the wild) can appear there. A plant the AI judges to be growing wild starts on everyone's map; every
+      other plant stays on your map only. On each plant's page you choose who sees it — Everyone, Only me,
+      or Hidden — and can change it at any time. A plant on everyone's map shows its species, its kind
+      (tree, plant or fungus) and its state, at its square of about 1 km and, zoomed in, at the spot where
+      you photographed it. It shows <strong>without your photo and without your name</strong>.
+      <strong>Threatened or protected species never appear</strong> on everyone's map. Our server
+      (Cloudflare) keeps a public plant's place, species and an anonymous identifier until you take it
+      off the map or delete your data.</li>
+    <li><strong>Names and talk.</strong> On a plant someone shared, anyone using the App can agree with
+      its name, suggest another, or write in its talk. What you post there is <strong>public</strong>, shown
+      with the name you gave the App when you started it, and never with your install identifier. A
+      suggestion may include a photo if you choose to add one; recognizable faces in it are blurred
+      before it is posted. <strong>Before anything is shown, an AI model (Google Gemini) checks it</strong>
+      for abuse, personal information and unsafe advice; a post it could not check is not kept. Posts and
+      suggestion photos are stored on our server until you remove them or delete your data. A post you report
+      is hidden for you at once and for everyone after several reports, and we review it; you can also
+      block a person.</li>
+    <li><strong>Outside observations.</strong> The map also shows plant observations published through
+      <strong>GBIF</strong> (the Global Biodiversity Information Facility) under open licences, credited to
+      their photographers; their photos load from <strong>iNaturalist's</strong> open-data store. A species'
+      description comes from <strong>Wikipedia</strong>, through our server.</li>
+  </ul>
 
   <h2>AI advice — accuracy and limits</h2>
   <p>
@@ -165,6 +208,18 @@
     (<a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare privacy policy</a>).
     You can turn Cloud Backup off at any time, and <strong>Settings → Delete my data</strong> erases the
     cloud copy too — every backed-up record <em>and</em> photo (see “Data retention and deletion”).
+  </p>
+
+  <h2>Plumula on the web (optional)</h2>
+  <p>
+    You can open your garden in a browser at <strong>app.plumula.world</strong>. It works on your Cloud
+    Backup: you sign in with a <strong>passkey</strong> (your device's Face ID, Touch ID or screen lock),
+    your recovery code, or a one-time code from the App, and the page then reads and updates that backup.
+    For a passkey we store only its <strong>public key</strong>; the private part never leaves your device.
+    The browser keeps a single, strictly necessary <strong>cookie</strong> holding a random session token
+    (we store only a one-way hash of it); a session ends after 30 days unused and 90 days at most, and
+    signing out or deleting your backup ends it. Nothing of your garden is kept in the browser after you
+    close the page. A garden started on the web is a backup like any other, and “Delete my data” erases it.
   </p>
 
   <h2>Information collected automatically</h2>
@@ -229,6 +284,7 @@
     <li><strong>Photo library</strong> — to pick an existing photo to scan, and to save a plant photo back to your library when you tap Save.</li>
     <li><strong>Microphone &amp; speech recognition (optional)</strong> — to dictate a message in the plant chat instead of typing. Transcription is performed by the operating system (Apple's Speech framework on iOS, Google's speech service on Android) and is subject to that platform's policy. We do not keep the audio.</li>
     <li><strong>Notifications (optional)</strong> — to send watering reminders and to tell you a diagnosis is ready. Reminders are scheduled locally on your device.</li>
+    <li><strong>Location (optional, while using the App)</strong> — from version 1.2, to save where you photographed a plant and show it on your map, and to show where you are on the map. Never in the background. See “Location and the map”.</li>
   </ul>
 
   <h2>How we use information</h2>
@@ -247,8 +303,10 @@
     diagnosis or chat reply (<strong>Google Gemini</strong>, <strong>Mistral AI</strong>, and
     <strong>Groq</strong>), Cloudflare (which hosts our proxy and, if you enable Cloud Backup, stores
     your backed-up plant data + compressed photos), Open-Meteo (weather for your device's time zone), Google
-    Analytics (usage analytics, through our server), and Apple/Google (purchases) — strictly to provide their
-    part of the App.
+    Analytics (usage analytics, through our server), Apple Maps and OpenFreeMap (the map), Google's
+    Geocoding API (place search, through our server), and Apple/Google (purchases) — strictly to provide their
+    part of the App. What you choose to put on <strong>everyone's map</strong> or post in a plant's talk is,
+    by design, visible to other people using the App (see “Location and the map”).
   </p>
 
   <h2>Data retention and deletion</h2>
@@ -265,7 +323,8 @@
     This resets the analytics identifier and asks our server to remove the data tied to your install:
     any reported content is deleted, the scan counter is replaced with an anonymous, one-way hashed
     record so it cannot simply be reset by reinstalling, and — if you used Cloud Backup — every
-    backed-up record and photo is erased from our servers. You can also contact us at the address below
+    backed-up record and photo is erased from our servers, as are your plants on everyone's map and
+    everything you posted in their talk. You can also contact us at the address below
     to make the same request.
   </p>
 
