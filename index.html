@@ -44,7 +44,7 @@
 
   <h2>Summary</h2>
   <ul>
-    <li>The App has <strong>no account or sign-in</strong>. Your plants, diagnoses, notes and chats are stored <strong>on your device</strong> — and, <strong>only if you turn on Cloud Backup</strong>, also backed up to our server so you can restore them. See “Cloud backup &amp; sync” below.</li>
+    <li>An account is <strong>optional</strong>: you can sign in with <strong>Apple</strong> or <strong>Google</strong> to keep your garden on every device and on the web, or use the App without one. Your plants, diagnoses, notes and chats are stored <strong>on your device</strong> and <strong>backed up to our server</strong>, so you get them back after a reinstall or on a new device. See “Cloud backup &amp; sync” and “Signing in” below.</li>
     <li><strong>The photos you scan, and the questions you ask, are sent to our server and to an AI provider</strong> so a diagnosis or reply can be produced. This is the core of what the App does.</li>
     <li><strong>Location is optional.</strong> From version 1.2 the App can ask for it when you photograph a plant, to put that plant on your own map. A plant growing outdoors can also appear on <strong>everyone's map</strong> if you choose Everyone for it: then its photo shows there too, never your name. See “Location and the map” below.</li>
     <li>Our website (<strong>plumula.world</strong>) and Plumula on the web count visits and button taps <strong>without cookies</strong> and without keeping your IP address. See “Website visits” below.</li>
@@ -76,9 +76,10 @@
   <p>
     Except for reported content (see “When you report an AI response” below), all of this is stored
     <strong>locally on your device</strong>, in the App's own database and private file storage.
-    Unless you turn on <strong>Cloud Backup</strong> (see below), we keep no copy of your plant library
-    on our servers and have no way to browse it. It is removed when you delete the plant in the App, or
-    when you uninstall the App.
+    A copy is also kept in your <strong>Cloud Backup</strong> on our servers (see below), under an
+    anonymous backup ID; we don't browse it. A plant is removed from both when you delete it in the App.
+    Uninstalling the App removes the copy on your device, not the backup (that is what lets a reinstall
+    bring your plants back); <strong>Settings → Delete my data</strong> removes the backup too.
   </p>
 
   <h2>Photos and AI processing</h2>
@@ -112,8 +113,8 @@
   <p>
     <strong>Outside of Cloud Backup and everyone's map, we do not store your photos or messages on our server.</strong>
     When you ask for a diagnosis or reply, they are relayed to the AI provider to produce your result
-    and are not written to any database of ours; only if you turn on <strong>Cloud Backup</strong>
-    (described next) is a copy kept on our server, and only of what you back up; and only a plant you
+    and are not written to any database of ours; a copy is kept on our server only in your
+    <strong>Cloud Backup</strong> (described next); and only a plant you
     put on <strong>Everyone</strong> has its photo kept there, to show on everyone's map (see “Location
     and the map”). Each provider then
     handles the request under its own policy, linked above. Two things to know here: Plumula
@@ -132,7 +133,7 @@
     is used instead. Location is asked “while using the App” only: it is never read in the background, and the
     App works the same without it (a plant then has no place until you put one on the map by hand). You
     can move a plant's pin, remove its place, or turn location off in your device's settings at any time.
-    A plant's place is stored on your device and, if you turned on Cloud Backup, in your backup.
+    A plant's place is stored on your device and in your backup.
   </p>
   <ul>
     <li><strong>The map itself.</strong> The map is drawn by <strong>Apple Maps</strong> on iPhone and
@@ -191,16 +192,16 @@
     offensive or unsafe, please report it with the flag button on the response, or email us.
   </p>
 
-  <h2>Cloud backup &amp; sync (optional)</h2>
+  <h2>Cloud backup &amp; sync</h2>
   <p>
-    The App can back up your plants to the cloud so you can restore them on a new device, recover after a
-    reinstall, or keep several devices in sync. <strong>This is off unless you turn it on</strong> —
-    either in <strong>Settings → Sync &amp; Backup</strong>, or from a one-time prompt the App may show
-    after you've saved your first plant or chat, offering to turn it on. There is still <strong>no account or login</strong>:
-    when you enable it, the App creates a random, anonymous <strong>backup ID</strong> (a long code, also
-    shown to you as a “recovery code”), and everything you back up is stored under that ID.
+    The App backs up your plants to the cloud so you can restore them on a new device, get them back after
+    a reinstall, or keep several devices in sync. <strong>It is always on</strong>:
+    without it, a lost phone or a reinstall would lose your plants. Without an account, the App creates a
+    random, anonymous <strong>backup ID</strong> and your plants are stored under that ID. To find it again
+    after a reinstall, we keep it linked to the App's install ID on your device (on Android the ID Android
+    gives this app, on iOS an ID the App keeps in your device's keychain).
   </p>
-  <p>When Cloud Backup is on, we store on <strong>our own Cloudflare servers</strong>:</p>
+  <p>For Cloud Backup we store on <strong>our own Cloudflare servers</strong>:</p>
   <ul>
     <li>your <strong>plant data</strong> — diagnoses, verdicts, care history, progress check-ins, watering
       records, notes and chats — as text records in a database (Cloudflare D1);</li>
@@ -212,15 +213,33 @@
     your name, email, or the AI providers above, and never used for ads or profiling. Anyone who has your
     recovery code can restore that data, so keep it private. Cloudflare stores it on our behalf
     (<a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare privacy policy</a>).
-    You can turn Cloud Backup off at any time, and <strong>Settings → Delete my data</strong> erases the
-    cloud copy too — every backed-up record <em>and</em> photo (see “Data retention and deletion”).
+    <strong>Settings → Delete my data</strong> erases the cloud copy — every backed-up record <em>and</em> photo (see “Data retention and deletion”).
+  </p>
+
+  <h2>Signing in (optional)</h2>
+  <p>
+    You can sign in with <strong>Apple</strong> or <strong>Google</strong>. They tell us a user ID that is
+    stable for Plumula and, if you let them, an email address (Apple's may be a private relay address); we
+    never see your password. We keep that ID and email, which backup they open, and for each device you
+    sign in on a <strong>session</strong>: a random token (we store only a one-way hash of it; the App keeps
+    the token in your device's Keychain or Keystore), the device's kind (such as “iPhone”), its country and
+    when it was last used. For Apple we also keep the token Apple issues to Plumula for your sign-in,
+    encrypted, and use it for one thing: telling Apple to end Plumula's access when you delete your account.
+    Signing up takes the plants on that device into your account; signing in on
+    another device brings them there; signing out takes them off that device and leaves them in your account.
+    In <strong>Settings → Signed-in devices</strong> you can see every device signed in and sign any of them
+    out. On the web, sign-in is checked by Cloudflare Turnstile, which looks for automated traffic without
+    asking you anything (<a href="https://www.cloudflare.com/turnstile-privacy-policy/" target="_blank" rel="noopener">Turnstile privacy notice</a>).
+    <strong>Settings → Delete my data</strong> deletes your account: its sign-ins, sessions and backup, and
+    for Apple, Plumula's access is revoked at Apple too, so it leaves your Apple Account's list of apps using Sign in with Apple.
   </p>
 
   <h2>Plumula on the web (optional)</h2>
   <p>
     You can open your garden in a browser at <strong>plumula.world</strong>. It works on your Cloud
-    Backup: you sign in with a <strong>passkey</strong> (your device's Face ID, Touch ID or screen lock),
-    your recovery code, or a one-time code from the App, and the page then reads and updates that backup.
+    Backup: you sign in with <strong>Apple</strong> or <strong>Google</strong>, a <strong>passkey</strong> (your
+    device's Face ID, Touch ID or screen lock), or a recovery code from an earlier version of the App, and
+    the page then reads and updates that backup.
     For a passkey we store only its <strong>public key</strong>; the private part never leaves your device.
     The browser keeps a single, strictly necessary <strong>cookie</strong> holding a random session token
     (we store only a one-way hash of it); a session ends after 30 days unused and 90 days at most, and
@@ -357,7 +376,7 @@
     Your plants, photos, diagnoses and chats live on your device: delete a plant or a scan in the App,
     or uninstall the App, to remove them locally. Photos and messages sent for a diagnosis are not
     retained by us. The scan counter tied to your install identifier is retained so limits still work
-    if you reinstall. <strong>If you turned on Cloud Backup</strong>, a copy of your plant data and
+    if you reinstall. A copy of your plant data and
     compressed photos is also kept on our servers under your anonymous backup ID until you erase it
     (below); uninstalling the App does <em>not</em> remove the cloud copy.
   </p>
