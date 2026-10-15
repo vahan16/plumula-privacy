@@ -33,7 +33,7 @@
 </head>
 <body>
   <h1>Plumula — Privacy Policy</h1>
-  <p class="updated">Last updated: 13 October 2026</p>
+  <p class="updated">Last updated: 15 October 2026</p>
 
   <p>
     This policy explains how the <strong>Plumula</strong> app (the “App”), published by
@@ -47,6 +47,7 @@
     <li>The App has <strong>no account or sign-in</strong>. Your plants, diagnoses, notes and chats are stored <strong>on your device</strong> — and, <strong>only if you turn on Cloud Backup</strong>, also backed up to our server so you can restore them. See “Cloud backup &amp; sync” below.</li>
     <li><strong>The photos you scan, and the questions you ask, are sent to our server and to an AI provider</strong> so a diagnosis or reply can be produced. This is the core of what the App does.</li>
     <li><strong>Location is optional.</strong> From version 1.2 the App can ask for it when you photograph a plant, to put that plant on your own map. A plant growing outdoors can also appear on <strong>everyone's map</strong> if you choose Everyone for it: then its photo shows there too, never your name. See “Location and the map” below.</li>
+    <li>Our website (<strong>plumula.world</strong>) and Plumula on the web count visits and button taps <strong>without cookies</strong> and without keeping your IP address. See “Website visits” below.</li>
     <li>The App shows <strong>no ads</strong> and contains no advertising SDK.</li>
     <li>We do <strong>not</strong> sell your personal information.</li>
   </ul>
@@ -225,6 +226,8 @@
     (we store only a one-way hash of it); a session ends after 30 days unused and 90 days at most, and
     signing out or deleting your backup ends it. Nothing of your garden is kept in the browser after you
     close the page. A garden started on the web is a backup like any other, and “Delete my data” erases it.
+    How the web app is used is counted without any cookie or identifier, the way the website counts its
+    visits (see “Website visits” under “Information collected automatically”).
   </p>
 
   <h2>Information collected automatically</h2>
@@ -249,11 +252,33 @@
       IP address, plant photos and chat content are not passed on. We use it in aggregate; it is not
       used to identify you personally or for advertising. See
       <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.
+      Our server also counts the same events itself, per day, by event, country and phone or tablet. To
+      count each install once a day it keeps a one-way hash of the analytics identifier made with a random
+      value that is deleted when the day ends, so the count can't be traced back to the identifier; the
+      identifier itself is not kept.
+    </li>
+    <li id="website-visits">
+      <strong>Website visits (plumula.world and app.plumula.world).</strong> When you open a page of
+      plumula.world, the page tells our server which page it is, the link that brought you there (the
+      referring site and any campaign tags in the link, such as <code>utm_source</code>), and whether your
+      screen is a touch screen. Its App Store, Google Play and web app buttons go through our server,
+      which counts the tap and sends you straight on. Plumula on the web (app.plumula.world) reports the same
+      usage events as the App, plus which way you chose to sign in and whether it worked, with no link to
+      your garden or backup. From the connection our server reads the <strong>country</strong> (Cloudflare
+      provides it) and, from your browser's user agent, the kind of device, its operating system and the
+      browser or app the page was opened in. To count each visitor once a day <strong>without a
+      cookie</strong>, it makes a one-way hash of your IP address and user agent together with a random
+      value that is deleted when the day ends: your <strong>IP address is never stored</strong>, and once
+      that day's value is gone the hash can't be made again or linked to you. Crawlers and automated
+      tools are not counted. No cookies, no third-party analytics and no advertising trackers are used
+      on these sites, and the counts are shared with no one.
     </li>
     <li>
-      <strong>Crash and error reports.</strong> When the App runs into an error in its own code, it
-      sends our server the error and where in the App's code it happened (its stack trace), the
-      App's version, and the operating system and its version, so we can fix it. Our server keeps one
+      <strong>Crash and error reports.</strong> When the App crashes or runs into an error in its own
+      code, it sends our server the error and where in the App's code it happened (its stack trace),
+      the App's version, and the operating system and its version, so we can fix it. A crash is sent
+      the next time the App is opened; on iPhone it comes from the crash report the system gives the
+      App about itself. Our server keeps one
       record per kind of error and how many times it happened. A report carries no identifier of you
       or your device, and none of your plant photos or chat content.
     </li>
@@ -322,6 +347,12 @@
     if you reinstall. <strong>If you turned on Cloud Backup</strong>, a copy of your plant data and
     compressed photos is also kept on our servers under your anonymous backup ID until you erase it
     (below); uninstalling the App does <em>not</em> remove the cloud copy.
+  </p>
+  <p>
+    Visit and usage counts (see “Website visits”) are kept for a limited time: each day's visitor records
+    (a one-day hash, how the visit came, the country and the kind of device) for <strong>60 days</strong>,
+    the daily totals for up to <strong>400 days</strong>. They contain nothing that identifies you, so they
+    can't be looked up or erased one person at a time.
   </p>
   <p>
     You can erase what we hold at any time from <strong>Settings → Delete my data</strong> in the App.
