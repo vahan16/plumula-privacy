@@ -33,7 +33,7 @@
 </head>
 <body>
   <h1>Plumula — Privacy Policy</h1>
-  <p class="updated">Last updated: 15 October 2026</p>
+  <p class="updated">Last updated: 26 October 2026</p>
 
   <p>
     This policy explains how the <strong>Plumula</strong> app (the “App”), published by
@@ -80,7 +80,7 @@
     A copy is also kept in your <strong>Cloud Backup</strong> on our servers (see below), under an
     anonymous backup ID; we don't browse it. A plant is removed from both when you delete it in the App.
     Uninstalling the App removes the copy on your device, not the backup (that is what lets a reinstall
-    bring your plants back); <strong>Settings → Delete my data</strong> removes the backup too.
+    bring your plants back); <strong>Settings → Delete my data</strong> (signed in: <strong>Settings → Profile → Delete account</strong>) removes the backup too.
   </p>
 
   <h2>Photos and AI processing</h2>
@@ -207,31 +207,38 @@
     <li>your <strong>plant data</strong> — diagnoses, verdicts, care history, progress check-ins, watering
       records, notes and chats — as text records in a database (Cloudflare D1);</li>
     <li>your <strong>plant photos</strong>, uploaded as <strong>compressed (downscaled)</strong> images to
-      object storage (Cloudflare R2) — not the full-resolution originals.</li>
+      object storage (Cloudflare R2) — not the full-resolution originals;</li>
+    <li>your <strong>profile</strong>: the name you give the App and, if you choose one, your profile
+      picture (a small copy, at most 512 pixels across), so they follow your account to every device you
+      sign in on. You can change or remove both in <strong>Settings → Profile</strong>.</li>
   </ul>
   <p>
-    This is kept solely to provide backup, restore and sync, tied to your anonymous backup ID — not to
-    your name, email, or the AI providers above, and never used for ads or profiling. Anyone who has your
+    This is kept solely to provide backup, restore and sync, tied to your backup ID (and, once you sign in,
+    to your account), never given to the AI providers above, and never used for ads or profiling. Anyone who has your
     recovery code can restore that data, so keep it private. Cloudflare stores it on our behalf
     (<a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare privacy policy</a>).
-    <strong>Settings → Delete my data</strong> erases the cloud copy — every backed-up record <em>and</em> photo (see “Data retention and deletion”).
+    <strong>Settings → Delete my data</strong> (signed in: <strong>Settings → Profile → Delete account</strong>) erases the cloud copy — every backed-up record <em>and</em> photo (see “Data retention and deletion”).
   </p>
 
   <h2>Signing in (optional)</h2>
   <p>
     You can sign in with <strong>Apple</strong> or <strong>Google</strong>. They tell us a user ID that is
     stable for Plumula and, if you let them, an email address (Apple's may be a private relay address); we
-    never see your password. We keep that ID and email, which backup they open, and for each device you
+    never see your password. Google also tells the App your name and your Google profile picture, and Apple
+    your name the first time you sign in if you share it: when your profile has no name or picture yet, the
+    App uses them to fill it in (the picture is downloaded once and kept as your profile picture; see
+    “Cloud backup &amp; sync”), and you can change or remove both in <strong>Settings → Profile</strong>.
+    We keep that ID and email, which backup they open, and for each device you
     sign in on a <strong>session</strong>: a random token (we store only a one-way hash of it; the App keeps
     the token in your device's Keychain or Keystore), the device's kind (such as “iPhone”), its country and
     when it was last used. For Apple we also keep the token Apple issues to Plumula for your sign-in,
     encrypted, and use it for one thing: telling Apple to end Plumula's access when you delete your account.
     Signing up takes the plants on that device into your account; signing in on
     another device brings them there; signing out takes them off that device and leaves them in your account.
-    In <strong>Settings → Signed-in devices</strong> you can see every device signed in and sign any of them
+    In <strong>Settings → Profile → Signed-in devices</strong> you can see every device signed in and sign any of them
     out. On the web, sign-in is checked by Cloudflare Turnstile, which looks for automated traffic without
     asking you anything (<a href="https://www.cloudflare.com/turnstile-privacy-policy/" target="_blank" rel="noopener">Turnstile privacy notice</a>).
-    <strong>Settings → Delete my data</strong> deletes your account: its sign-ins, sessions and backup, and
+    <strong>Settings → Profile → Delete account</strong> deletes your account: its sign-ins, sessions, profile and backup, and
     for Apple, Plumula's access is revoked at Apple too, so it leaves your Apple Account's list of apps using Sign in with Apple.
   </p>
 
@@ -388,7 +395,8 @@
     can't be looked up or erased one person at a time.
   </p>
   <p>
-    You can erase what we hold at any time from <strong>Settings → Delete my data</strong> in the App.
+    You can erase what we hold at any time from <strong>Settings → Delete my data</strong> (signed in: <strong>Settings → Profile → Delete account</strong>) in the App, or by emailing us (see “Contact”) from the
+    address you signed in with or with your recovery code.
     This resets the analytics identifier and asks our server to remove the data tied to your install:
     any reported content is deleted, the scan counter is replaced with an anonymous, one-way hashed
     record so it cannot simply be reset by reinstalling, and — if you used Cloud Backup — every
@@ -410,7 +418,7 @@
     rights to access, correct, or delete personal data and to object to certain processing. Because
     the App stores your plant data only on your device, you can exercise most of these directly in
     the App and in your device settings. For anything held on our side (the scan counter, and any
-    reported content), use <strong>Settings → Delete my data</strong> or contact us below.
+    reported content), use <strong>Settings → Delete my data</strong> (signed in: <strong>Settings → Profile → Delete account</strong>) or contact us below.
   </p>
 
   <h2>Security</h2>
